@@ -1,0 +1,28 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class MAIN {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите логин и пароль:");
+        String feedBack = reader.readLine();
+        if (feedBack.equals("Нет аккаунта")) {
+            Person person = new Person();
+
+            System.out.print("Введите своё имя: ");
+            person.setFirstName(reader.readLine()+"\n");
+            System.out.print("Введите свою фамилию: ");
+            person.setLastName(reader.readLine()+"\n");
+            System.out.print("Приудумайте логин: ");
+            person.setLogin(reader.readLine()+"\n");
+            System.out.print("Приудумайте пароль: ");
+            person.setPassword(reader.readLine()+"\n");
+            person.createAccount(person);
+            System.out.println("Аккаунт занесён в базу данных");
+        }
+//        else {
+//         Проверка на логин и пароль
+//        }
+
+    }
+}
